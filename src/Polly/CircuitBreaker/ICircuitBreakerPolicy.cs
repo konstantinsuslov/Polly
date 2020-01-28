@@ -18,6 +18,8 @@ namespace Polly.CircuitBreaker
         /// </summary>
         Exception LastException { get; }
 
+        ICircuitStatistics Statistics { get; }
+
         /// <summary>
         /// Isolates (opens) the circuit manually, and holds it in this state until a call to <see cref="CircuitBreakerPolicy.Reset"/> is made.
         /// </summary>
@@ -39,5 +41,10 @@ namespace Polly.CircuitBreaker
         /// <remarks>This will be default(<typeparamref name="TResult"/>) if no results have been handled by the circuit-breaker since the circuit last closed, or if the last event handled by the circuit was an exception.</remarks>
         /// </summary>
         TResult LastHandledResult { get; }
+    }
+
+    public interface ICircuitStatistics
+    {
+
     }
 }

@@ -75,6 +75,8 @@ namespace Polly.CircuitBreaker
             }
         }
 
+        public ICircuitStatistics Statistics => throw new NotImplementedException();
+
         protected bool IsInAutomatedBreak_NeedsLock
         {
             get

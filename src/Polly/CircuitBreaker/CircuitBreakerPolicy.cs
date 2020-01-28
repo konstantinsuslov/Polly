@@ -28,6 +28,8 @@ namespace Polly.CircuitBreaker
         /// </summary>
         public Exception LastException => _breakerController.LastException;
 
+        public ICircuitStatistics Statistics => throw new NotImplementedException();
+
         /// <summary>
         /// Isolates (opens) the circuit manually, and holds it in this state until a call to <see cref="Reset()"/> is made.
         /// </summary>
@@ -90,6 +92,8 @@ namespace Polly.CircuitBreaker
         /// <remarks>This will be null if no exceptions have been handled by the circuit-breaker since the circuit last closed, or if the last event handled by the circuit was a handled <typeparamref name="TResult"/> value.</remarks>
         /// </summary>
         public Exception LastException => _breakerController.LastException;
+
+        public ICircuitStatistics Statistics => throw new NotImplementedException();
 
         /// <summary>
         /// Gets the last result returned from a user delegate which the circuit-breaker handled.

@@ -7,6 +7,7 @@ namespace Polly.CircuitBreaker
         CircuitState CircuitState { get; }
         Exception LastException { get; }
         TResult LastHandledResult { get; }
+        ICircuitStatistics Statistics { get; }
         void Isolate();
         void Reset();
         void OnCircuitReset(Context context);
